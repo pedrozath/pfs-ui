@@ -2309,6 +2309,8 @@ a:hover { text-decoration: none; }
 
 .inverted { color: white; }
 
+input[type="submit"] { background-color: #d80546; }
+
 form.busca > * { height: 40px; }
 
 .bg { margin: 0; position: absolute; z-index: 0; }
