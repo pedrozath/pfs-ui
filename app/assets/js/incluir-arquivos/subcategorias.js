@@ -111,15 +111,23 @@ Subcategorias.prototype = {
     },
 
     add_remove_on_click: function(remove_btn, item){
+        var _this = this;
         remove_btn.on("click", function(e){
             e.preventDefault();
             e.stopPropagation();
-            if(confirm("Tem certeza que deseja remover este item? Esta ação não poderá ser desfeita.")){
-                item.slideUp(function(){
-                    item.remove();
-                });
-            }
+            _this.delete(item);
         })
+    },
+
+    delete: function(item, confirmation){
+        if(typeof confirmation == "undefined"){
+            var confirmation = confirm("Tem certeza que deseja remover este item? Esta ação não poderá ser desfeita.");
+        }
+        if(confirmation){
+            item.slideUp(function(){
+                item.remove();
+            });
+        }
     },
 
     add_new_inside_on_click: function(adicionar_btn, item){
@@ -141,16 +149,19 @@ Subcategorias.prototype = {
     },
 
     rename: function(item){
+        var create = true;
         item.find("> div > .name").html(
             (function(){
                 var new_value = prompt("Digite o novo nome desta categoria (ou deixe em branco para manter inalterado)");
                 if(new_value == "" || new_value == null) {
+                    create = false;
                     return item.find("> div > .name").text();
                 } else {
                     return new_value
                 }
             }).call(this)
         );
+        return create;
     },
 
     interaction_callback: function(item, type_of_event){
@@ -185,12 +196,11 @@ Subcategorias.prototype = {
     },
 
     new: function(){
-        console.log(this.business_unit_icon);
         var item = $("<li><div>"+this.business_unit_icon+"<span class=\"name\">Nova categoria</span>"+this.add_btn+this.remove_btn+"</div></li>").appendTo(this.options.parent_element.children().last());
         this.add_remove_on_click(item.find("> div > .remover-btn"), item);
         this.add_new_inside_on_click(item.find("> div > .adicionar-btn"), item);
         this.add_rename_on_click(item);
-        this.rename(item);
+        if(!this.rename(item)) this.delete(item, true);
     },
 
     new_inside: function(item){
@@ -200,7 +210,7 @@ Subcategorias.prototype = {
         this.add_remove_on_click(new_item.find("> div > .remover-btn"), new_item);
         this.add_new_inside_on_click(new_item.find("> div > .adicionar-btn"), item);
         this.add_rename_on_click(new_item);
-        this.rename(new_item);
+        if(!this.rename(new_item)) this.delete(new_item, true);
     },
 
     clear: function(){
