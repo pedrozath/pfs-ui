@@ -1,0 +1,49 @@
+.splash {background-color:#fc9eb6; border-radius:10px; padding:10px; text-align:center; color:#ffffff}
+.splash h1 {text-transform:uppercase; font-weight:100}
+
+#incluir-arquivos .main {margin:20px 0; padding:20px 35px; background-color:#f2f2f2; border-radius:10px}
+
+#incluir-arquivos .main .etapa {border-radius:10px; padding-top:10px; padding-bottom:10px}
+
+#incluir-arquivos .main .etapa .header {height:30px; padding:0}
+#incluir-arquivos .main .etapa .header .numeroEtapa {width:50px; height:50px; margin:-10px 10px 0 0; background-color:#cdcdcd; text-align:center; padding-top:8px; float:left; border-radius:10px}
+#incluir-arquivos .main .etapa .header .numeroEtapa p {margin:0}
+#incluir-arquivos .main .etapa .header > p {height:100%; padding:7px 20px; margin-left:-10px; background-color:#c0c0c0; display:inline-block}
+#incluir-arquivos .main .etapa p.obrigatorio {border:0; border-radius:0; margin-left:0; background-color:transparent}
+#incluir-arquivos .main .etapa p.opcional {margin-left:0; background-color:transparent}
+
+#incluir-arquivos .main .etapa .content {padding:20px; background-color:#dcdcdc; border-radius:10px}
+#incluir-arquivos .main .etapa .content input {margin:96px 0 10px 0}
+#incluir-arquivos .main .etapa .content p {float:left}
+
+#incluir-arquivos .main .etapa .content table {background-color:#ffffff}
+#incluir-arquivos .main .etapa .content table th {text-transform:uppercase}
+
+ul.listaBU {padding:0}
+ul.listaBU li {width:138px; height:166px; margin-right:20px; border-radius:10px; background-color:#bfbfbf; float:left}
+ul.listaBU li.last {margin-right:0}
+ul.listaBU li h2 {margin:0; text-align:center; font-size:25px; line-height:25px; padding:10px 0 5px 0}
+ul.listaBU li > .content {height:96px; border-radius:0; background-color:#eaeaea}
+ul.listaBU li > .footer {padding:0 10px; background-color:red}
+ul.listaBU li > .footer p {width:100%; padding:7px 0 3px 0; text-transform:uppercase}
+ul.listaBU li > .footer p span {padding:2px 9px 0 9px; background-color:#ffffff; border: solid 1px #4d4d4d; border-radius:6px; margin-left:4px}
+
+#incluir-arquivos .main .etapa .subCatProd {width:96%; margin:0 auto; padding:20px; float:none; background-color:#d3d3d3; border-bottom-right-radius:10px; border-bottom-left-radius:10px}
+#incluir-arquivos .main .etapa .subCatProd p {display:inline}
+#incluir-arquivos .main .etapa .row > .container {margin-top:10px}
+#incluir-arquivos .main .etapa .row > .container ul {padding:0; border-radius:10px; padding:10px; background-color:#ffffff}
+#incluir-arquivos .main .etapa .row > .container ul a {float:left; background-color:#e5e5e5; padding:7px 12px 3px 12px; margin:8px; border-radius:10px; border:solid 1px #d3d3d3; letter-spacing:1px; color:#666666}
+#incluir-arquivos .main .etapa .row > .container ul a:hover {background-color:#b4b4b4; color:#ffffff}
+#incluir-arquivos .main .etapa .row > .container ul li a span {color:#ff0000; font-size:15px; margin-right:3px}
+
+.incluirArquivos .main .etapa .subCatProd {width:96%; margin:0 auto; padding:20px; float:none; background-color:#d3d3d3; border-bottom-right-radius:10px; border-bottom-left-radius:10px}
+.incluirArquivos .main .etapa .subCatProd p {display:inline}
+.incluirArquivos .main .etapa .row > .container {margin-top:10px}
+.incluirArquivos .main .etapa .row > .container ul {padding:0; border-radius:10px; padding:10px; background-color:#ffffff}
+.incluirArquivos .main .etapa .row > .container ul a {float:left; background-color:#e5e5e5; padding:7px 12px 3px 12px; margin:8px; border-radius:10px; border:solid 1px #d3d3d3; letter-spacing:1px; color:#666666}
+.incluirArquivos .main .etapa .row > .container ul a:hover {background-color:#b4b4b4; color:#ffffff}
+.incluirArquivos .main .etapa .row > .container ul li a span {color:#ff0000; font-size:15px; margin-right:3px}
+
+.incluirArquivos .main .etapa .row > .container ul.selCampanha li {width:194px; height:223px; margin:10px; border-top-left-radius:10px; border-top-right-radius:10px}
+.incluirArquivos .main .etapa .row > .container ul.selCampanha li > img {width:100%; height:182px; border-top-left-radius:12px; border-top-right-radius:12px; background-color:#eaeaea}
+.incluirArquivos .main .etapa .row > .container ul.selCampanha li > h2 {text-transform:uppercase}

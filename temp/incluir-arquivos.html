@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LG Partner</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/jquery.ui.all.css">
+    
+    <script type ="text/javascript" src="assets/libs/js/jquery.js"></script>
+    <script type ="text/javascript" src="assets/libs/js/bootstrap.js"></script>
+    <script src="assets/libs/js/jquery.ui.widget.js"></script>
+    <script src="assets/libs/js/jquery.iframe-transport.js"></script>
+    <script src="assets/libs/js/jquery.fileupload.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body>
+
+<div class="alert alert-danger alert-dismissable lead" id="notice">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+        <div class="row">
+            <p class="col-xs-11 col-xs-offset-1"><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+        </div>
+    </div>
+</div>
+
+    <header>
+        <nav class="principal container">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <img src="assets/images/lg-partners-logo.png" alt="" class="logo">
+                    <p>Ambiente <strong>Administrativo</strong></p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <nav class="principal container">
+        <div class="menu">
+            <div class="row">
+                <ul class="col-xs-12">
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-arquivos.png" alt="">Arquivos</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-usuarios.png" alt="">Usuários</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-categorias-e-produtos.png" alt="">Categorias<br>e produtos</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-campanhas.png" alt="">Campanhas</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-retailers.png" alt="">Retailers</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-relatorios.png" alt="">Relatórios</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-meus-dados.png" alt="">Meus dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info">
+    <div class="container">
+        <div class="sections-info-user row">
+            <div class="col-xs-5">Olá Simei Doblinski, bem vindo ao LG Partners!</div>
+            <div class="col-xs-3">
+            	<span class="ultimo-acesso">Último acesso</span>
+            	<p>01/04/14 as 11:22</p>
+            </div>
+            <div class="col-xs-3"><p class="uploads-efetuados">Uploads efetuados <span>178</span></p></div>
+            <div class="col-xs-1"><button type="button" class="btn btn-default btn-sm">Sair</button></div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="container">
+    <div class="splash">
+        <h1>Incluir arquivos</h1>
+        <p>Para selecionar múltiplos arquivos, basta selecionar todos em sua origem, adiciona-los e classifica-los por grupo ou individualmente.</p>
+    </div>
+</div>
+
+<script src="assets/js/incluir-arquivos/utils.js"></script>
+<script src="assets/js/incluir-arquivos/incluir-arquivos.js"></script>
+<script src="assets/js/spawn-business-units-and-subcategories.js"></script>
+<script src="assets/js/incluir-arquivos/html-resumo.js"></script>
+<script src="assets/js/incluir-arquivos/data-output.js"></script>
+<script src="assets/js/incluir-arquivos/selectable.js"></script>
+<script src="assets/js/incluir-arquivos/subcategorias.js"></script>
+<script src="assets/js/incluir-arquivos/business-unit.js"></script>
+<script src="assets/js/incluir-arquivos/campanha.js"></script>
+<script src="assets/js/incluir-arquivos/destinatarios.js"></script>
+
+<script src="assets/js/data.js"></script>
+
+<section class="container" id="incluir-arquivos">
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="border"></div>
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>1</strong>
+                </div>
+                <p>Selecione o arquivo na pasta de origem:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                
+                <form action="" enctype="multipart/form-data">
+                    <input type="file" id="upload-de-arquivos" multiple="" style="display: none">
+                    <input type="submit" class="btn-procurar btn-lg btn-default col-xs-12" value="Procurar" id="upload-de-arquivos-btn">
+                    <p>Caso deseje alterar o Nome do Arquivo, clique em <span>Editar</span>.</p>
+                </form>
+                
+            </div>
+            <div class="col-xs-10">
+                <table class="table table-bordered uploading-files">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tamanho</th>
+                            <th>Status</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                     </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>2</strong>
+                </div>
+                <p>Selecione a Unidade de Negócio:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+
+        <div class="row">
+            <ul class="lista-icones" id="business-units">
+    <li class="all-business-units">
+        <a href="#">
+            <h2>&nbsp;</h2>
+            <div class="content">
+                <h2>TODOS</h2>
+            </div>
+            <div class="footer">
+                <!-- <p>Subs Sel.: <span>2</span></p> -->
+            </div>
+        </a>
+    </li>
+</ul>
+        </div>
+
+        <div class="subcategorias-panel">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Abaixo as <strong>sub-categorias e produtos</strong> relacionadas a Unidade de Negócio selecionada acima:</p>
+                    <p class="opcional">Campo opcional</p>
+                </div>
+            </div>
+            <div class="subcategorias">
+    <div class="row">
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+    </div>
+</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>3</strong>
+                </div>
+                <p>Selecione a campanha:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+
+        <div class="row">
+            <ul id="campanhas" class="lista-icones icones-grandes"></ul>
+        </div>
+    </div>
+
+    <div class="etapa" id="etapa-atribuir-destinatarios">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="border"></div>
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>4</strong>
+                </div>
+                <p>Atribuir destinatários específicos:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+        <div id="e4content-click" class="row">
+            <div class="col-xs-12">
+                <p class="incluir-arquivos-abrir">
+                    <a href="#" class="btn-click action-open action-targetid-e4content">Clique para abrir <span class="glyphicon glyphicon-play"></span></a>
+                </p>
+            </div>
+        </div>
+        <div id="e4content" class="row" style="display:none;">
+            <div class="col-xs-12">
+                <div class="incluir-arquivos-abrir">
+                    <a href="#" class="btn-click action-close action-targetid-e4content">Clique para fechar <span class="glyphicon glyphicon-play seta-fechar"></span></a>
+                    <h4>usuários, grupos e retailer</h4>
+                    <p>Caso o(s) arquivo(s) possua(m) um destinatário especifico, determine aqui o Usuário, Grupo ou Retailer que irá recebe-lo:</p>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalUsuarios"><h3>usuário</h3><p>ver lista completa</p></button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalGrupos"><h3>grupo</h3><p>ver lista completa</p></button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalRetailers"><h3>retailer</h3><p>ver lista completa</p></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="info col-xs-12">
+            <p class="text-center">Clique aqui e verifique se o(s) arquivo(s) anexado(s) possue(m) as configurações corretas.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="info col-xs-2 col-xs-offset-5">
+            <input type="submit" id="visualizar" class="btn-lg btn-default btn-block btn-procurar" value="Visualizar" data-toggle="modal" data-target="#modalVisualizar">
+        </div>
+    </div>
+</section>
+
+<!-- MODAL VISUALIZAR -->
+<div class="modal fade bs-example-modal-lg" id="modalVisualizar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Incluir arquivos</h3>
+                <h4>Verifique aqui se o(s) arquivo(s) anexados(s) no passo anterior esta(ão) com as suas categorias corretamente demarcadas, junto com seus destinatários, antes de finalizar o processo e enviá-los ao fornecedores.</h4>
+            </div>
+        <div class="modal-body" id="resumo">
+<!--         <table class="table table-bordered">
+                    
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tamanho</th>
+                    <th>Status</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+ -->
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Caso o arquivo e seus dados estejam corretos, basta clicar no botão enviar que os destinatários serão informados da disponibilidade dos mesmos.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL VISUALIZAR -->
+
+<!-- MODAL RETAILERS -->
+<div data-destinatarios="retailers" class="modal fade bs-example-modal-lg" id="modalRetailers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Retailers</h3>
+                <h4>Modal incluir arquivos para retailers.</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="90%" class="bg-danger">Nome</th>
+                            <th class="text-center bg-danger">Selecionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<th>Pedro Alvares Cabral</th>
+							<th class="text-center"><input type="checkbox" value="1"></th>
+						</tr>
+						<tr>
+							<th>Barack Obama</th>
+							<th class="text-center"><input type="checkbox" value="2"></th>
+						</tr>
+						<tr>
+							<th>Valeska Popozuda</th>
+							<th class="text-center"><input type="checkbox" value="3"></th>
+						</tr>
+						<tr>
+							<th>Neymar da Silva Junior</th>
+							<th class="text-center"><input type="checkbox" value="4"></th>
+						</tr>
+						<tr>
+							<th>Paulo Maluf</th>
+							<th class="text-center"><input type="checkbox" value="5"></th>
+						</tr>
+					</tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [end] MODAL RETAILERS -->
+
+<!-- MODAL USUARIOS -->
+<div data-destinatarios="usuarios" class="modal fade bs-example-modal-lg" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="myModalLabel">Usuários</h3>
+        <h4>Modal incluir arquivos para usuários.</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+            
+            <thead>
+                <tr>
+                    <th width="90%" class="bg-danger">Nome</th>
+                    <th class="text-center bg-danger">Selecionar</th>
+                </tr>
+                 <tr>
+                    <th>Pedro Alvares Cabral</th>
+                    <th class="text-center"><input type="checkbox" value="1"></th>
+                </tr>
+                <tr>
+                    <th>Barack Obama</th>
+                    <th class="text-center"><input type="checkbox" value="2"></th>
+                </tr>
+                <tr>
+                    <th>Valeska Popozuda</th>
+                    <th class="text-center"><input type="checkbox" value="3"></th>
+                </tr>
+                <tr>
+                    <th>Neymar da Silva Junior</th>
+                    <th class="text-center"><input type="checkbox" value="4"></th>
+                </tr>
+                <tr>
+                    <th>Paulo Maluf</th>
+                    <th class="text-center"><input type="checkbox" value="5"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL USUARIOS -->
+
+<!-- MODAL GRUPOS -->
+<div data-destinatarios="grupos" class="modal fade bs-example-modal-lg" id="modalGrupos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="myModalLabel">Grupos</h3>
+        <h4>Modal incluir arquivos para grupos.</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+            
+            <thead>
+                <tr>
+                    <th width="90%" class="bg-danger">Nome</th>
+                    <th class="text-center bg-danger">Selecionar</th>
+                </tr>
+                <tr>
+                    <th>Pedro Alvares Cabral</th>
+                    <th class="text-center"><input type="checkbox" value="1"></th>
+                </tr>
+                <tr>
+                    <th>Barack Obama</th>
+                    <th class="text-center"><input type="checkbox" value="2"></th>
+                </tr>
+                <tr>
+                    <th>Valeska Popozuda</th>
+                    <th class="text-center"><input type="checkbox" value="3"></th>
+                </tr>
+                <tr>
+                    <th>Neymar da Silva Junior</th>
+                    <th class="text-center"><input type="checkbox" value="4"></th>
+                </tr>
+                <tr>
+                    <th>Paulo Maluf</th>
+                    <th class="text-center"><input type="checkbox" value="5"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL GRUPOS -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-1 logo"><img src="assets/images/lg-logo-small.png" alt=""></div>
+                <div class="col-xs-10">
+                    <div class="links">
+                        <ul class="menu-footer">
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Arquivos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Baixar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Usuários</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Grupos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Categorias e produtos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Campanhas</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Retailers</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Relatórios</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Acessos</a></li>
+                                        <li><a href="#">Downloads</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#">Meus dados</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Copyright (c) 2014 LG Electronics. Todos os direitos reservados.</p>
+                    </div>
+
+                </div>
+                <div class="col-xs-1 logo-cns-footer"><img src="assets/images/desenvolvido-por-lg-cns.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

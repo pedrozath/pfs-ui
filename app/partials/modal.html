@@ -1,0 +1,21 @@
+<div class="modal fade bs-example-modal-lg" id="{{options.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">{{options.title}}</h3>
+                <h4>{{options.message}}</h4>
+            </div>
+            <div class="modal-body">
+                {{{contents}}}
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">{{options.footerMessage}}</p>
+                {{!#each buttons}}
+                    <button type="button" class="btn btn-default btn-lg fechar" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-lg salvar" data-dismiss="modal">Salvar</button>
+                {{!/each}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+---
+layout: user
+---
+
+<div class="container">
+    <div class="splash">
+        <h1>gerenciar categorias e produtos</h1>
+        <p>Selecione abaixo para qual <strong>Unidade de Negócio</strong> deseja incluir <strong><em>categorias</em></strong> ou produtos para futura classificação dos arquivos enviados.</p>
+    </div>
+</div>
+<script src="{{assets}}/js/data.js"></script>
+<script src="{{assets}}/js/spawn-business-units-and-subcategories.js"></script>
+<script src="{{assets}}/js/gerenciar-categorias-e-produtos.js"></script>
+<script src="{{assets}}/js/data-output.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/utils.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/selectable.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/subcategorias.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/business-unit.js"></script>
+
+<script src="{{assets}}/js/incluir-arquivos/data-output.js"></script>
+
+<section class="container">
+
+    <div class="etapa">
+
+        <br>
+        <div class="row">
+            {{>business-units}}
+        </div>
+
+        <div class="subcategorias-panel gerenciar-cat-prod">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Abaixo as <strong>sub-categorias e produtos</strong> relacionadas a Unidade de Negócio selecionada acima:</p>
+                    <p>O <strong>Produto</strong> deve vir associado a sua <strong>Categoria</strong> dentro da Unidade de Negócio, para tal clique em ( <img src="{{assets}}/images/btn-adicionar.png" alt=""> ), na aba específica para adicionar o nome do Produto.<br>Caso ainda não haja a categoria referente, use a área marcada para inclusão de uma nova.</p>
+                    <p>Clique em (<img src="{{assets}}/images/btn-remover.png" alt="">) para <strong>Excluir</strong> o item.</p>
+                </div>
+            </div>
+            {{>categorias}}
+
+<!--             <div class="subcategorias">
+                <div class="row">
+                    <ul class="gerenciar-subcategorias col-xs-3">
+                        <li>
+                            <span>Exemplo</span>
+                            <a href="#" title="Remover item"><img src="{{assets}}/images/btn-remover.png" alt=""></a>
+                            <a href="#" title="Adicionar item"><img src="{{assets}}/images/btn-adicionar.png" alt=""></a>
+                        </li>
+                        <li class="subcategoria">
+                            <span>Exemplo subcategoria</span>
+                            <a href="#" title="Remover item"><img src="{{assets}}/images/btn-remover.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul class="gerenciar-subcategorias col-xs-3">
+                        <li class="nova-categoria"><a href="#">+ Nova Categoria</a></li>
+                    </ul>
+                </div>
+            </div>
+
+ -->        </div>
+
+    </div>
+
+</section>

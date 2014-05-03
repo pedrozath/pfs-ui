@@ -1,0 +1,204 @@
+.btn-home-admin
+	background-color: #e0809e
+	height: 76px
+	background-position: 70px 11px
+	background-repeat: no-repeat
+	border-radius: 12px
+
+	&:hover
+		background-color: #767779
+
+	h1
+		width: 100px
+		margin: 0 120px 0 0
+		float: right
+		text-align: left
+		font-family: $corpo
+		font-weight: 300
+		font-size: 30px
+		line-height: 31px
+		color: $branco
+		text-transform: uppercase
+
+		span
+			font-family: $corpo
+			font-weight: 500
+
+
+.btn-home-admin-incluir-arquivos
+	background-image: url("../images/icon-incluir-arquivos.png")
+
+.btn-home-admin-gerenciar-usuarios
+	background-image: url("../images/icon-gerenciar-usuarios.png")
+
+.btn-home-admin-gerenciar-campanhas
+	background-image: url("../images/icon-gerenciar-campanhas.png")
+
+.busca-admin
+
+	h4
+		font-family: Arial
+		font-size: 11px
+		color: #d80546
+		font-weight: 500
+		text-transform: uppercase
+		margin: 0 0 5px 0
+
+	span
+		font-family: Arial
+		font-size: 10px
+		color: $cinza-50
+		text-transform: uppercase
+		margin: 0
+
+	input
+		border-radius: 9px
+
+	.input-busca
+		background: url("../images/bg-input-busca.png") 15px 17px no-repeat
+		padding: 28px 15px
+
+	.select-busca-admin
+		background: url("../images/bg-select-busca.png") 15px 19px no-repeat
+		height: 44px
+
+		> select
+			height: 26px
+			margin-top: -2px
+			font-family: Arial
+			font-size: 11px
+			color: $cinza-50
+			background: transparent!important
+			-webkit-appearance: none
+			border: none
+			box-shadow: none
+
+ul.select-table
+	background-color: #e9e9e9
+	padding: 10px 0 5px 0
+	border-top-right-radius: 10px
+	border-top-left-radius: 10px
+	float: right
+
+	li 
+		float: left
+		margin-left: 20px
+
+		a 
+			font-family: Arial
+			font-weight: bold
+			font-size: 11px
+			color: #919191
+			text-decoration: underline
+
+			img 
+				margin: -2px 14px 0 14px
+
+		&:first-child
+			margin-left: 0
+
+span.info-paginacao
+	// margin: -33px 10px 0 30px
+	// display: inline-table
+
+	&:first-child
+		margin-left: 0
+
+ul.menu-user
+	text-transform: uppercase
+	color: $cinza-50
+
+	li
+		height: 83px
+		float: left
+		margin-right: 1px
+
+		> a
+			height: 83px
+			color: $cinza-50
+			display: block
+			font-size: 18px
+			line-height: 16px
+			font-weight: 100
+			padding: 36px
+			background: url("../images/spacer-menu-user.png") top left no-repeat
+
+			&:hover
+				background-color: $cinza-10
+				background-image: url("../images/spacer-menu-user-over.png")
+
+		&:first-child a
+			background-image: none
+
+		> p
+			width: 340px
+			text-transform: none
+			letter-spacing: normal
+			height: 83px
+			color: $cinza-50
+			display: block
+			float: none
+			font-size: 14px
+			line-height: 14px
+			font-weight: 100
+			padding: 30px 36px 30px 24px
+
+img.logo-user
+	float: left
+	margin: 25px 70px 0 40px
+
+ul.lista-campanhas-user
+	border-radius: 10px
+	float: left
+	padding: 0
+
+	li 
+		float: left
+		margin: 0 0 20px 20px
+		border-radius: 10px
+
+		a
+			width: 100%
+			height: 100%
+			font-size: 14px
+			color: #d80546
+			font-weight: 300
+			display: block
+			border-radius: 10px
+			background-color: #f1f1f1
+
+			h4
+				text-align: center
+				padding: 6px 0 2px 0
+				margin: 0
+				background-color: #e3e3e3
+				border-bottom-left-radius: 10px
+				border-bottom-right-radius: 10px
+
+			&:hover
+				background-color: #c9c9c9
+				color: $preto
+
+				h4
+					background-color: #c9c9c9
+
+			img
+				margin: 10px 20px
+
+.adicionar-campanha
+	float: right
+	margin: 45px 30px 0 25px
+	font-size: 36px
+	color: $cinza-10
+
+	&:hover
+		color: $cinza-50
+
+input.checkbox-lista-campanha
+	margin: 0 5px 0 0
+
+table > tbody >tr >td
+	padding: 11px 8px 8px 8px
+
+table > thead:first-child > tr:first-child > th:first-child
+	padding-left: 28px

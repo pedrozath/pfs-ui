@@ -1,0 +1,152 @@
+---
+layout: admin
+---
+
+<script src="{{assets}}/js/sumir-ou-mostrar-background.js"></script>
+<script src="{{assets}}/js/admin-home/admin-home.js"></script>
+<section class="container">
+
+    <div class="row">
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-lg btn-block btn-home-admin btn-home-admin-incluir-arquivos"><h1>incluir<br><span>arquivos</span></h1></button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-lg btn-block btn-home-admin  btn-home-admin-gerenciar-usuarios"><h1>gerenciar<br><span>usuários</span></h1></button>
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-lg btn-block btn-home-admin  btn-home-admin-gerenciar-campanhas"><h1>gerenciar<br><span>campanhas</span></h1></button>
+        </div>
+    </div>
+
+    <div class="row">
+        <form class="busca-admin">
+            <div class="col-xs-7">
+                <input class="form-control input-lg input-busca" id="busca" type="text">
+            </div>
+            <div class="col-xs-4">
+                <h4>caso deseje, filtre sua busca por:</h4>
+                <div class="row">
+                    <div class="select-busca-admin col-xs-6">
+                        <span>campanha</span>
+                        <select class="form-control" id="filtrar-por-campanha">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                    <div class="select-busca-admin col-xs-6">
+                        <span>categoria de produto</span>
+                        <select class="form-control">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <button type="submit" id="search-button" class="btn btn-default btn-block glyphicon glyphicon-search btn-busca btn-lg btn-grande"></button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="select-table">
+                <li><a href="#" id="selecionar-todos-os-arquivos" title=""><img src="{{assets}}/images/icon-select.png" alt="">Selecionar todos os arquivos</a></li>
+                <li><img src="{{assets}}/images/spacer-admin-home.png" alt=""></li>
+                <li><a href="#" title="">Baixar arquivos selecionados<img src="{{assets}}/images/icon-download.png" alt=""></a></li>
+            </ul>
+            <table class="table table-bordered uploading-files" id="uploaded-files">
+                <thead>
+                    <tr>
+                        <th class="col-xs-3"><span class="glyphicon glyphicon-ok"></span></th>
+                        <th class="col-xs-3">Nome</th>
+                        <th class="col-xs-3">Categoria de produto</th>
+                        <th class="col-xs-2">Campanha</th>
+                        <th class="col-xs-1 text-center">Tamanho</th>
+                        <th class="col-xs-1 text-center">Data</th>
+                        <th class="col-xs-1 text-center">Editar</th>
+                        <th class="col-xs-1 text-center">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td data-filter-criteria="campanha">Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td data-filter-criteria="campanha">Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td data-filter-criteria="campanha">Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td data-filter-criteria="campanha">Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td data-filter-criteria="campanha">Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td class="check"><input type="checkbox"></td>
+                        <td data-filter-criteria="filename">DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td data-filter-criteria="campanha">Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 text-center">
+            <span class="info-paginacao">Página</span>
+            <ul class="pagination">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+            <span class="info-paginacao">Resultados por página</span>
+            <ul class="pagination">
+              <li><a href="#">10</a></li>
+              <li><a href="#">25</a></li>
+              <li><a href="#">50</a></li>
+            </ul>
+        </div>
+
+
+</section>

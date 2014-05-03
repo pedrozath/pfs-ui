@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LG Partner</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/jquery.ui.all.css">
+    
+    <script type ="text/javascript" src="assets/libs/js/jquery.js"></script>
+    <script type ="text/javascript" src="assets/libs/js/bootstrap.js"></script>
+    <script src="assets/libs/js/jquery.ui.widget.js"></script>
+    <script src="assets/libs/js/jquery.iframe-transport.js"></script>
+    <script src="assets/libs/js/jquery.fileupload.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body>
+    
+
+<div class="login-wrapper">
+    <img src="assets/images/lg-partners-logo.png" alt="" class="logo">
+    <div class="well login-panel">
+
+            <div class="main-screen login-screens">
+                <p>Bem vindo ao Disco Virtual da LG para intercâmbio com seus parceiros e fornecedores!</p>
+                <form action="" class="form">
+                    <div class="form-group"> <input type="text" class="form-control" placeholder="Usuário"> </div>
+                    <div class="form-group"> <input type="text" class="form-control" placeholder="Senha"> </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#" id="forgotten-password" title="Esqueci minha senha">Esqueci minha senha</a>
+                            <button type="submit" value="Entrar" class="btn btn-default">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Dúvidas ou sugestões? Envie um email para: <a href="mailto:partners@lge.com">partners@lge.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forgotten-password-screen login-screens" style="">
+                <p>Digite seu email para resetar sua senha.</p>
+                <form action="">
+                    <input type="text" style="width: 75%; float: left" class="form-control" placeholder="E-mail">
+                    <button type="submit" value="Entrar" style="width: 20%; float: right" class="btn btn-default">Enviar</button>
+                </form>
+            </div>
+
+            <div class="password-sent-screen login-screens">
+                <p>Senha enviada, você deve receber um email dentro de alguns instantes.</p>
+                <p><a href="#" class="main-login">Tentar login novamente</a></p>
+            </div>
+
+            <script>
+                $(function(){
+                    var change_screen = function(screen){
+                        $(".login-screens").hide();
+                        $("."+screen).show();
+                    }
+
+                    change_screen("main-screen");
+
+                    $("#forgotten-password").click(function(){
+                        change_screen("forgotten-password-screen");
+                    });
+                    
+                    $(".forgotten-password-screen form").submit(function(){
+                        change_screen("password-sent-screen");
+                    });
+
+                    $(".main-login").click(function(){
+                        change_screen("main-screen");
+                    });
+                })
+            </script>
+    </div>
+    <img src="assets/images/lg-logo-small.png" alt="">
+</div>
+
+<img class="bg bg-right" src="assets/images/bg-splash-right.png" alt="">
+<img class="bg bg-left" style="top: 0" src="assets/images/bg-splash-left.png" alt="">
+</body>
+</html>

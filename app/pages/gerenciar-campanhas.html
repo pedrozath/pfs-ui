@@ -1,0 +1,191 @@
+---
+layout: user
+---
+
+<script src="{{assets}}/js/filter.js"></script>
+<script src="{{assets}}/js/sumir-ou-mostrar-background.js"></script>
+<script src="{{assets}}/js/campanha.js"></script>
+<script src="{{assets}}/js/gerenciar-categorias-e-produtos.js"></script>
+
+<script>
+    $(function() {
+        $("#datepicker").datepicker();
+        sumir_ou_mostrar_background();
+    });
+</script>
+
+
+<div class="container">
+    <div class="splash">
+        <h1>gerenciar campanhas</h1>
+        <p>Para selecionar <strong><em>multiplos arquivos</em></strong>, basta selecionar todos em sua origem, adiciona-los e classifica-los por grupo ou individualmente.</p>
+    </div>
+</div>
+
+{{#modal 
+    id="modal-incluir-nova-campanha" 
+    message="Preencha os campos abaixo para incluir novas campanhas"
+    title="Incluir nova campanha"
+    buttons="Cancelar,Salvar"}}
+
+    <form class="incluir-nova-campanha">
+        <div class="row">
+            <div class="col-xs-12">
+                <input type="text" class="form-control" placeholder="Nome">
+                <span>Campo obrigatório</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <input type="text" id="datepicker" class="form-control select-data" placeholder="Data de término">
+                <span>Campo obrigatório</span>
+            </div>
+            <div class="col-xs-5">
+                <input type="submit" class="btn-lg btn-default btn-block btn-lg-partners imagem-campanha-btn" value="Fazer upload de imagem">
+                <input type="file" class="imagem-campanha" style="display:none">
+                <!-- <input type="text" id="datepicker" class="form-control btn-block" placeholder="Nome-da-imagem.jpg"> -->
+                <span class="opcional">Campo opcional</span>
+            </div>
+        </div>
+    </form>
+{{/modal}}
+
+{{#modal 
+    id="modal-incluir-nova-campanha" 
+    message="Preencha os campos abaixo para incluir novas campanhas"
+    title="Editar campanha"
+    buttons="Cancelar,Salvar"}}
+
+    <form class="incluir-nova-campanha">
+        <div class="row">
+            <div class="col-xs-12">
+                <input type="text" class="form-control" placeholder="Nome">
+                <span>Campo obrigatório</span>
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col-xs-5">
+                <input type="text" id="datepicker" class="form-control select-data" placeholder="Data de término">
+                <span>Campo obrigatório</span>
+            </div>
+            <div class="col-xs-5">
+                <input type="submit" class="btn-lg btn-default btn-block btn-lg-partners imagem-campanha-btn" value="Fazer upload de imagem">
+                <input type="file" class="imagem-campanha" style="display:none">
+                <!-- <input type="text" id="datepicker" class="form-control btn-block" placeholder="Nome-da-imagem.jpg"> -->
+                <span class="opcional">Campo opcional</span>
+            </div>
+        </div>
+    </form>
+    
+{{/modal}}
+
+
+<!-- <script src="{{assets}}/js/incluir-arquivos/incluir-arquivos.js"></script> -->
+<!-- <script src="{{assets}}/js/incluir-arquivos/utils.js"></script> -->
+<!-- <script src="{{assets}}/js/incluir-arquivos/selectable.js"></script> -->
+<!-- <script src="{{assets}}/js/incluir-arquivos/subcategorias.js"></script> -->
+<!-- <script src="{{assets}}/js/incluir-arquivos/business-unit.js"></script> -->
+
+<section class="container">
+
+    <div class="row">
+        <form class="busca-admin">
+            <div class="col-xs-5">
+                <input class="form-control input-lg input-busca" id="busca" type="text">
+            </div>
+            <div class="col-xs-1">
+                <button type="submit" class="btn btn-grande btn-default btn-block glyphicon glyphicon-search btn-lg"></button>
+            </div>
+            <div class="col-xs-2">
+                <a class="btn btn-grande" href="#" data-toggle="modal" data-target="#modal-incluir-nova-campanha">Nova campanha</a>
+            </div>
+        </form>
+    </div>
+    
+    <div class="row">
+		<ul class="lista-campanhas-user lista-campanhas-gerenciamento">
+			
+				<li data="1"> 
+					<div class="data-campanha">
+						<span>Até: 29/06/2014</span>
+					</div>
+					<a href="#" title="">
+						<img src="{{assets}}/images/campanha-1.png" alt="">
+						<h4 data-filter-criteria="nome">
+							Natal
+						</h4>
+					</a>
+					<div class="edit-delete">
+						<a href="#" data-edit="1">
+							Editar
+						</a>
+						<a href="#" data-delete="1">
+							Apagar
+						</a>
+					</div>
+				</li>
+			
+				<li data="2"> 
+					<div class="data-campanha">
+						<span>Até: 26/06/2014</span>
+					</div>
+					<a href="#" title="">
+						<img src="{{assets}}/images/campanha-1.png" alt="">
+						<h4 data-filter-criteria="nome">
+							Copa do Mundo
+						</h4>
+					</a>
+					<div class="edit-delete">
+						<a href="#" data-edit="2">
+							Editar
+						</a>
+						<a href="#" data-delete="2">
+							Apagar
+						</a>
+					</div>
+				</li>
+			
+				<li data="4"> 
+					<div class="data-campanha">
+						<span>Até: 28/06/2014</span>
+					</div>
+					<a href="#" title="">
+						<img src="{{assets}}/images/campanha-1.png" alt="">
+						<h4 data-filter-criteria="nome">
+							Dia das Mães
+						</h4>
+					</a>
+					<div class="edit-delete">
+						<a href="#" data-edit="4">
+							Editar
+						</a>
+						<a href="#" data-delete="4">
+							Apagar
+						</a>
+					</div>
+				</li>
+			
+				<li data="5"> 
+					<div class="data-campanha">
+						<span>Até: 29/06/2014</span>
+					</div>
+					<a href="#" title="">
+						<img src="{{assets}}/images/campanha-1.png" alt="">
+						<h4 data-filter-criteria="nome">
+							Dia das Crianças
+						</h4>
+					</a>
+					<div class="edit-delete">
+						<a href="#" data-edit="5">
+							Editar
+						</a>
+						<a href="#" data-delete="5">
+							Apagar
+						</a>
+					</div>
+				</li>
+			
+		</ul>
+	</div>
+
+</section>

@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LG Partner</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/jquery.ui.all.css">
+    
+    <script type ="text/javascript" src="assets/libs/js/jquery.js"></script>
+    <script type ="text/javascript" src="assets/libs/js/bootstrap.js"></script>
+    <script src="assets/libs/js/jquery.ui.widget.js"></script>
+    <script src="assets/libs/js/jquery.iframe-transport.js"></script>
+    <script src="assets/libs/js/jquery.fileupload.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body>
+
+<div class="alert alert-danger alert-dismissable lead" id="notice">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+        <div class="row">
+            <p class="col-md-11 col-md-offset-1"><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+        </div>
+    </div>
+</div>
+
+    <header>
+        <nav class="principal container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/images/lg-partners-logo.png" alt="" class="logo-user">
+                    <ul class="menu-user">
+                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="#" title="">Meus downloads</a></li>
+                        <li><p>Em caso de dúvidas ou sugestões, entre em contato com o responsável por sua conta no Depto. de Marketing.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <nav class="principal container">
+
+    </nav>
+
+    <div class="info">
+    <div class="container">
+        <div class="sections-info-user row">
+            <div class="col-xs-5">Olá Simei Doblinski, bem vindo ao LG Partners!</div>
+            <div class="col-xs-3">
+            	<span class="ultimo-acesso">Último acesso</span>
+            	<p>01/04/14 as 11:22</p>
+            </div>
+            <div class="col-xs-3"><p class="uploads-efetuados">Uploads efetuados <span>178</span></p></div>
+            <div class="col-xs-1"><button type="button" class="btn btn-default btn-sm">Sair</button></div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="container">
+    <div class="splash splash-meus-downloads">
+        <h1>Gerenciar Usuários</h1>
+        <p>Para incluir Novos Usuários
+        basta preencher o formulário abaixo e salvar os dados inseridos. Caso queira Editar ou Excluir alguém
+        use a tabela de referência. No quadro inferior é possível incluir novos grupos e editar os existentes.</p>
+    </div>
+</div>
+
+<!-- <script src="assets/libs/js/jquery.tokeninput.js"></script> -->
+<script src="assets/js/data.js"></script>
+
+<script src="assets/js/incluir-arquivos/data-output.js"></script>
+
+<script src="assets/js/incluir-arquivos/utils.js"></script>
+<script src="assets/js/incluir-arquivos/business-unit.js"></script>
+<script src="assets/js/incluir-arquivos/subcategorias.js"></script>
+<script src="assets/js/incluir-arquivos/selectable.js"></script>
+
+<script src="assets/js/sumir-ou-mostrar-background.js"></script>
+<script src="assets/js/filter.js"></script>
+<script src="assets/js/crud-usuario.js"></script>
+<script src="assets/js/spawn-business-units-and-subcategories.js"></script>
+<section class="container">
+
+
+
+<div class="modal fade bs-example-modal-lg" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Incluir novo usuário</h3>
+                <h4>Preencha os campos abaixo para incluir um novo usuário</h4>
+            </div>
+            <div class="modal-body">
+                
+    
+        <form action="" class="incluir-novo-usuario">
+            <div class="row">
+                <div class="form-group col-xs-4">
+                    <h4>Digite o nome completo do usuário</h4>
+                    <input type="text" class="form-control" placeholder="Nome">
+                </div>
+    
+                <div class="form-group col-xs-3">
+                    <h4>E-mail</h4>
+                    <input type="text" class="form-control" placeholder="Único para cada usuário">
+                </div>
+                
+                <div class="form-group col-xs-3">
+                    <h4>Telefone</h4>
+                    <input type="text" class="form-control" placeholder="Contato direto com o usuário">
+                </div>
+    
+                <div class="form-group col-xs-2">
+                    <h4>Perfil</h4>
+                    <div class="checkbox horizontal"><label for="user"><input type="checkbox" name="user"> User </label> </div>
+                    <div class="checkbox horizontal"><label for="admin"><input type="checkbox" name="admin"> Admin </label> </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <h4>Categoria de produto</h4>
+                    <ul class="lista-icones" id="business-units">
+    <li class="all-business-units">
+        <a href="#">
+            <h2>&nbsp;</h2>
+            <div class="content">
+                <h2>TODOS</h2>
+            </div>
+            <div class="footer">
+                <!-- <p>Subs Sel.: <span>2</span></p> -->
+            </div>
+        </a>
+    </li>
+</ul>
+                    <div class="subcategorias">
+    <div class="row">
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+    </div>
+</div>
+                </div>
+            </div>
+            <div class="row">
+    
+                <div class="form-group col-xs-4">
+                    <h4>Grupo</h4>
+                    <div class="checkbox"><label for=""><input type="checkbox">User</label></div>
+                    <div class="checkbox"><label for=""><input type="checkbox">Admin</label></div>
+                    <div class="checkbox"><label for=""><input type="checkbox">Grupo</label></div>
+                </div>
+    
+                <div class="form-group col-xs-8">
+                    <h4>Retailer</h4>
+                    <div class="row">
+    
+                        <div class="col-xs-3">
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                        </div>
+    
+                        <div class="col-xs-3">
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                        </div>
+    
+                        <div class="col-xs-3">
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                        </div>
+    
+                        <div class="col-xs-3">
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>
+                            <div class="checkbox"><label for=""><input type="checkbox">XXXXXXXXXX</label></div>                   
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </form>
+    
+            </div>
+            <div class="modal-footer">
+                <p class="text-center"></p>
+                
+                    <button type="button" class="btn btn-default btn-lg fechar" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-lg salvar" data-dismiss="modal">Salvar</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <form class="busca-admin">
+            <div class="col-md-5">
+                <input id="busca" class="form-control input-lg input-busca" type="text">
+            </div>
+            <div class="col-md-4">
+                <h4>caso deseje
+                filtre sua busca por:</h4>
+                <div class="row">
+                    <div class="select-busca-admin col-md-6">
+                        <span>campanha</span>
+                        <select class="form-control">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                    <div class="select-busca-admin col-md-6">
+                        <span>categoria de produto</span>
+                        <select class="form-control">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-default btn-block glyphicon glyphicon-search btn-busca btn-lg btn-grande"></button>
+            </div>
+
+            <div class="col-xs-2">
+                <a class="btn btn-grande" href="#" data-toggle="modal" data-target="#modal-user">Novo Usuário</a>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered uploading-files">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Nome</th>
+                        <th class="col-md-2">Email</th>
+                        <th class="col-md-1">Telefone</th>
+                        <th class="col-md-1">Perfil</th>
+                        <th class="col-md-1">Grupo</th>
+                        <th class="col-md-1">Retailer</th>
+                        <th class="col-md-2">Categoria e Produto</th>
+                        <th class="col-md-1 text-center"><div>Editar</div></th>
+                        <th class="col-md-1 text-center"><div>Excluir</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing Marketing Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td data-filter-criteria="nome">Pedro Oliveira Maciel Lima</td>
+                        <td data-filter-criteria="email">pedrinho.zath@hiperativo.com</td>
+                        <td data-filter-criteria="telefone">98095-8744</td>
+                        <td data-filter-criteria="perfil">Admin</td>
+                        <td data-filter-criteria="grupo">Marketing</td>
+                        <td data-filter-criteria="retailer">Casas Bahia</td>
+                        <td data-filter-criteria="categoria e produto">Categoria e produto</td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="assets/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 text-center">
+            <span class="info-paginacao">Página</span>
+            <ul class="pagination">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+            <span class="info-paginacao">Resultados por página</span>
+            <ul class="pagination">
+              <li><a href="#">10</a></li>
+              <li><a href="#">25</a></li>
+              <li><a href="#">50</a></li>
+            </ul>
+        </div>
+
+
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 logo"><img src="assets/images/lg-logo-small.png" alt=""></div>
+                <div class="col-md-10">
+                    <div class="links">
+                        <ul class="menu-footer">
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Arquivos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Baixar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Usuários</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Grupos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Categorias e produtos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Campanhas</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Retailers</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Relatórios</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Acessos</a></li>
+                                        <li><a href="#">Downloads</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#">Meus dados</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Copyright (c) 2014 LG Electronics. Todos os direitos reservados.</p>
+                    </div>
+
+                </div>
+                <div class="col-md-1 logo-cns-footer"><img src="assets/images/desenvolvido-por-lg-cns.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

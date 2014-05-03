@@ -1,0 +1,109 @@
+.subcategorias
+    padding: 30px
+    background-color: #fff
+    border-radius: 10px
+
+    ul
+        padding: 0
+
+    .colunas-subcategorias
+        border-radius: 10px
+        
+    li
+        display: block
+        margin: 10px 0
+    
+        .remover-btn, .adicionar-btn
+            cursor: pointer
+            position: absolute
+            padding: 5px
+            top: 0
+        
+
+        .remover-btn
+            right: 0
+
+        .adicionar-btn
+            right: 30px
+
+        ul
+            margin-left: 20px
+
+        div
+            display: block
+            background-color: #e5e5e5
+            padding: 5px 15px 5px 15px
+            border-radius: 10px
+            border: solid 1px #d3d3d3
+            letter-spacing: 1px
+            color: #666666
+            margin: 0 10px
+            cursor: pointer
+            position: relative
+
+            &[contenteditable="true"]
+                cursor: default
+
+            /* &::before 
+                content: "+"
+                color: #ff0000
+                font-size: 15px
+                margin-right: 3px */
+
+            &:hover 
+                background-color: #b4b4b4
+                color: #ffffff
+
+        &.selected > div
+            background-color: #d80546 !important
+            color: $branco !important
+
+    .gerenciar-subcategorias
+        border-radius: 10px
+
+        li
+            display: block
+            margin: 10px 0
+            background-color: #e5e5e5
+            padding: 5px 15px 5px 15px
+            border-radius: 10px
+            border: solid 1px #d3d3d3
+            letter-spacing: 1px
+            color: #666666
+            min-height: 33px
+
+            span
+                float: left
+                margin-top: 2px
+
+            a
+                float: right
+                margin-left: 5px
+
+        li.subcategoria
+            width: 80%
+            margin-left: 23px
+            background-color: #b3b3b3
+            color: $branco
+            border: 0
+            padding: 6px 15px 5px 15px
+
+        li.nova-categoria
+            background-color: $cinza-50
+            padding: 0
+            margin-left: 20px
+
+            a
+                width: 100%
+                display: block
+                margin: 0
+                background-color: #799474
+                padding: 8px 15px 5px 15px
+                border-radius: 10px
+                letter-spacing: 1px
+                color: $branco
+                float: left
+                margin-left: 0
+
+                &:hover
+                    background-color: #8bae84

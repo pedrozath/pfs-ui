@@ -1,0 +1,309 @@
+// .container
+//     max-width: none !important
+//     width: 970px
+
+body 
+    font-family: $corpo
+    line-height: 1.4
+    
+    > .info
+        margin: 5px 0 10px 0
+        color: $branco
+        background-color: #b1b1b1
+
+        .sections-info-user > div
+            height: 46px
+            padding: 15px 0 0 30px
+
+            + div
+                background: url("../images/spacer-info-user.png") center left no-repeat
+
+            > span.ultimo-acesso
+                margin-top: -3px
+                width: 75px
+                display: block
+                padding: 2px 0 0 30px
+                background: url("../images/icon-ultimo-acesso.png") center left no-repeat
+                font-family: Arial
+                font-size: 10px
+                line-height: 10px
+                text-transform: uppercase
+                float: left
+
+            > p
+                margin: 4px 0 0 15px
+                font-family: Arial
+                font-size: 10px
+                line-height: 10px
+                float: left
+
+            > p.uploads-efetuados
+                text-transform: uppercase
+                background: url("../images/icon-uploads-efetuados.png") 0 2px no-repeat
+                height: 46px
+                margin: -3px 0 0 0
+                padding: 6px 0 0 29px
+
+                > span
+                    background-color: $cinza-10
+                    padding: 5px
+                    font-family: Arial
+                    font-size: 15px
+                    color: $cinza-50
+                    border-radius: 5px
+                    margin-left: 8px
+
+            > button
+                margin: -7px 0 0 -10px
+                padding: 5px 20px
+
+
+    > header, > section
+        margin-bottom: 20px
+        margin-top: 20px
+        > * 
+            margin-bottom: 20px
+
+        > * + * 
+            margin-top: 20px
+
+    > header img.logo
+        float: left
+        margin: 0 30px 0 40px
+
+    > header p
+        text-transform: uppercase
+        color: $cinza-10
+        float: left
+        font-size: 26px
+        line-height: 22px
+        width: 100px
+        font-family: $corpo
+        font-weight: 300
+
+        letter-spacing: 4px
+
+        > strong
+            color: #ec99b2
+            font-weight: normal
+
+
+    .menu
+        height: 120px
+        font-family: $corpo
+        font-weight: 300
+
+        ul
+            text-transform: uppercase
+            color: $cinza-50
+
+            li
+                width: 162px
+                height: 120px
+                float: left
+                text-align: center
+
+                > a
+                    width: 161px
+                    height: 120px
+                    color: $cinza-50
+                    display: block
+                    font-size: 20px
+                    line-height: 18px
+                    padding-top: 24px
+                    background: url("../images/spacer-menu.png") center left no-repeat
+
+                    &:hover
+                        background: url("../images/spacer-menu-over.png") center left no-repeat $cinza-10
+
+                    > img
+                        display: block
+                        margin: 0 auto 10px auto
+
+            li:first-child a
+                background: none
+
+                &:hover
+                    background: $cinza-10
+
+footer 
+    background-color: #f2f2f2
+    margin-bottom: 0px
+    padding-top: 20px
+    padding-bottom: 40px
+
+    .links
+        height: 86px
+        background: url("../images/spacer-footer.jpg") 10px 0 no-repeat
+        padding-left: 41px
+
+    .logo
+        padding-top: 23px
+
+    .links
+        width: 100%
+        font-family: Arial
+        font-size: 10px
+
+        ul.menu-footer
+            width: 100%
+            float: left
+            padding: 34px 0
+            font-weight: bold
+            text-transform: uppercase
+            font-size: 12px
+            margin-bottom: 10px
+
+            li
+                max-width: 85px
+                float: left
+                margin-left: 50px
+
+                &:first-child
+                    margin-left: 0
+
+                a
+                    color: #a3a3a3
+
+                ul.submenu-footer
+                    min-width: 0
+                    font-size: 11px
+                    font-weight: normal
+                    text-transform: none
+                    
+                    li 
+                        margin: 0
+                        float: none
+                        display: list-item
+                        max-width: none
+
+                        a
+                            padding: 7px 20px
+                            color: $cinza-50
+
+    .logo-cns-footer
+        padding: 0
+        margin-top: 28px
+
+.btn-grande
+    background-color: #cccccc
+    color: $branco
+    padding: 15px
+    font-size: 25px
+    border-radius: 10px
+    border: 0
+    line-height: 1.0
+
+    &:hover
+        background-color: $cinza-10
+        border: 0
+
+.btn-primary
+    background-color: #d80546
+    color: #fff
+    border: 1px solid #d80546
+
+    &:hover
+        background-color: #fff
+        border: 1px solid #d80546
+        color: #d80546
+
+
+h1 
+    font-size: 24px
+
+
+ul 
+    list-style-type: none
+    margin: 0
+
+
+nav.principal a 
+    font-size: 18px
+    text-transform: uppercase
+
+
+
+a 
+    color: #000
+
+
+    &:hover 
+        text-decoration: none
+
+
+.campanhas 
+    background-color: #dadada
+    border-radius: 10px
+    padding: 10px
+
+
+    ul 
+        display: block
+        overflow: hidden
+        background-color: #fff
+        padding: 20px
+        width: 720px
+        float: left
+
+
+    ul li 
+        width: 80px
+        height: 80px
+        float: left
+        border: 1px solid red
+
+
+
+    ul li + li 
+        margin-left: 20px
+
+    .plus 
+        float: right
+        margin-right: 30px
+
+.plus 
+    display: inline-block
+    font-size: 80px
+    line-height: 120px
+
+
+.inverted 
+    color: #fff
+
+
+input 
+//    border-radius: 5px
+//    border: 1px solid #fdacbb
+
+form.busca > * 
+    height: 40px
+
+.bg
+    margin: 0
+    position: absolute
+    z-index: 0
+
+    &.bg-left
+        left: 0
+
+    &.bg-right
+        right: 0
+
+.alert
+    border-radius: 0
+    
+    .container
+        height: 25px
+
+    .close
+        font-size: 32px
+
+
+span.info-paginacao
+    display: inline-block
+    vertical-align: top
+    margin: 20px 0 20px 0px
+    line-height: 34px
+    text-align: left
+    padding:  0px 20px

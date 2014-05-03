@@ -1,0 +1,337 @@
+App = {};
+
+$(function(){
+
+    // Envios de arquivos
+
+    App.files = [];
+
+    App.file_index = 0;
+    App.canceled_files = 0;
+
+    activate_or_deactivate_enviar_button = function(){
+        var botoes = $("#enviar").add("#visualizar");
+        if(App.files.length !== App.file_index - App.canceled_files){
+            botoes.attr("disabled", "disabled");
+        } else {
+            botoes.removeAttr("disabled");
+        }
+    }
+
+    $("#upload-de-arquivos-btn").click(function(e){
+        e.preventDefault()
+        $("#upload-de-arquivos").click()
+    });
+
+    $("#upload-de-arquivos").fileupload({
+
+        url: 'http://10.193.151.105:8080/pfs-web/userAdmin/upload',
+        dataType: 'json',
+        autoUpload: true,
+        sequentialUploads: true,
+
+        change: function(e, data){
+            data.files.forEach(function(file){
+                App.file_index++;
+                file.my_id = App.file_index;
+
+                var file_row = [
+                    '<tr id="file-'+file.my_id+'">',
+                    '    <td>'+file.name+'</td>',
+                    '    <td>'+Math.round(file.size/(1024))+'KB</td>',
+                    '    <td class="status">Carregando</td>',
+                    '    <td><a class="delete" href="#" data-delete-file><img src="#" alt="" /></a></td>',
+                    '</tr>'
+                ].join("\n");
+
+                $(".uploading-files tbody").append(file_row);
+            });
+
+            activate_or_deactivate_enviar_button();
+        },
+
+        done: function(e, data){
+            data.files.forEach(function(file, index){
+                var database_file = data.jqXHR.responseJSON.file;
+                var file_row = $("#file-"+file.my_id);
+
+                file_row.find(".status").html("Sucesso");
+                file_row.find(".delete").attr("data-delete-file", database_file.id);
+                file_row.attr("data-id", database_file.id);
+
+                App.files.push(database_file);
+            });
+
+            $("[data-delete-file]").click(function(e){
+                App.canceled_files++;
+                e.preventDefault();
+                var id = parseInt($(this).attr("data-delete-file"));
+                App.files.forEach(function(file, index){
+                    if(file.id == id) App.files.splice(index, 1);
+                })
+                $("[data-id=\""+id+"\"").remove();
+            })
+
+            activate_or_deactivate_enviar_button();
+        }
+
+    });
+
+    // Dados
+
+    Data = {
+
+        business_units:[
+            {
+                "name": "HE",
+                "id": 1,
+                "subcategories": [
+                    {
+                        "name": "TVs",
+                        "id": 2,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs OLED",
+                        "id": 6,
+                        "products": [
+                            {
+                                "id": 13,
+                                "name": "Curved OLED"
+                            },
+                            {
+                                "id": 14,
+                                "name": "Gallery"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "TVs ULTRA HD",
+                        "id": 7,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs 3D",
+                        "id": 8,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs Smart",
+                        "id": 9,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs LED",
+                        "id": 10,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs LCD",
+                        "id": 11,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "TVs Plasma",
+                        "id": 12,
+                        "products": [
+                            
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "IT",
+                "id": 15,
+                "subcategories": [
+                    {
+                        "name": "Notebooks",
+                        "id": 16,
+                        "products": [
+                            
+                        ]
+                    },
+                    {
+                        "name": "Monitores",
+                        "id": 17,
+                        "products": [
+                            {
+                                "id": 18,
+                                "name": "Monitores LED"
+                            },
+                            {
+                                "id": 19,
+                                "name": "Monitores LCD"
+                            },
+                            {
+                                "id": 20,
+                                "name": "Monitores IPS"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+
+        campanhas: [
+
+            {
+                name: "Criança Esperança",
+                id: 0,
+                img: "renato-aragao.gif"
+
+            }
+        ]
+    }
+
+    // Business Units e suas categorias
+
+    App.subcategory_items_sum = 0;
+
+    Data.business_units.forEach(function(business_unit){
+        business_unit.subcategories.forEach(function(subcategory){
+            App.subcategory_items_sum += subcategory.products.length+1;
+        })
+    })
+
+    App.subcategory_columns = 4
+    App.subcategory_item_counter = 0;
+
+
+    App.business_units = [];
+
+    Data.business_units.forEach(function(business_unit){
+        business_unit.parent_element = $("#business-units")
+        App.business_units.push(new BusinessUnit(business_unit));
+    });
+
+    $(".all-business-units").click(function(e){
+        e.preventDefault();
+        App.business_units.forEach(function(business_unit){
+            if(business_unit.selected) {
+                business_unit.select();
+            } else {
+                business_unit.deselect();
+            }
+
+            business_unit.show_subcategories();
+            $(e.currentTarget).addClass("selected")
+        });
+    });
+
+    // Campanhas
+
+    App.campanhas = [];
+
+    Data.campanhas.forEach(function(campanha){
+        campanha.parent_element = $("#campanhas");
+        App.campanhas.push(new Campanha(campanha));
+    });
+
+    // Destinatarios
+
+    App.destinatarios = []
+
+    $("[data-destinatarios]").each(function(){
+        var division = $(this);
+        App.destinatarios.push(
+            new Destinatarios({
+                name                  : division.attr("data-destinatarios"),
+                html_entities         : division.find("input"),
+                division              : division,
+                name_location_in_html : "val()"
+            })
+        )
+    })
+
+
+    // a:Button Click Open/Close
+    /* 
+        .btn-click           -> Open/Close Trigger
+        .action-open         -> Action
+        .action-targetid-ID  -> Target
+        
+        Usage example:
+
+        <div id="CONTENT-click">
+            <a href="#" class="btn-click action-open action-targetid-CONTENT"></a>
+        </div>
+        <div id="CONTENT" class="row" style="display:none;">
+            <a href="#" class="btn-click action-close action-targetid-CONTENT">/a>
+        </div>
+    */
+
+    $('.btn-click').each(function(index,element){
+        if($(this).hasClass('action-open')){
+            $(this).click(function(e){
+                e.preventDefault();
+                target = (($(this).attr('class').split(' '))[2]).split('-')[2];
+                $('#'+target+'-click').slideUp();
+                $('#'+target).slideDown()
+            })
+        } else {
+            $(this).click(function(e){
+                e.preventDefault();
+                target = (($(this).attr('class').split(' '))[2]).split('-')[2];
+                $('#'+target+'-click').slideDown();
+                $('#'+target).slideUp()
+            })
+        }
+    });
+
+    
+    validate = function(){
+        return true;
+    }
+
+    window.data_output = function(){     
+        output = {
+            files: [],
+            business_units: [],
+            subcategories: [],
+            campanhas: [],
+            destinatarios: {}
+        }
+
+        output.files = App.files;
+
+        App.business_units.forEach(function(business_unit){
+            if(business_unit.selected) {
+                output.business_units.push(business_unit.id);
+
+                business_unit.subcategories.selected_items.forEach(function(subcategory_id){
+                    output.subcategories.push(subcategory_id);
+                })
+            }
+        });
+
+        App.campanhas.forEach(function(campanha){
+           output.campanhas.push(campanha.selected_items[0]);
+        })
+
+        App.destinatarios.forEach(function(destinatarios){
+            output.destinatarios[destinatarios.name] = destinatarios.selected_items;
+        })
+
+        return output;
+    }
+
+    $("#enviar").click(function(){
+        if(validate()){
+            console.log(data_output());
+        }
+
+    })   
+
+});

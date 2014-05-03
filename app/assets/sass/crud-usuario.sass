@@ -1,0 +1,53 @@
+.usuarios
+    thead tr
+        height: 75px
+
+        th
+            vertical-align: middle
+            text-align: center
+
+            &.vertical-text
+                width: 20px
+
+                div
+                    -webkit-transform: rotate(-90deg)
+
+#modal-user
+    .checkbox.horizontal
+        display: inline-block
+
+        + .checkbox
+            margin-left: 10px
+
+    .subcategorias, .list-icones
+        padding: 0
+
+    .lista-icones
+        width: auto
+        box-shadow: none
+        margin: 0
+
+        li, h2, .content
+            background-color: transparent
+
+        .content
+            height: 60px
+
+        .footer
+            display: none
+
+        li
+            margin: 0
+            height: auto
+            width: 60px
+
+            + li
+                margin-left: 15px
+
+            &.selected
+                h2
+                    color: #d80546
+                    font-weight: 900
+
+        h2
+            font-size: 16px

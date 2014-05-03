@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LG Partner</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    
+    <script type ="text/javascript" src="assets/libs/js/jquery.js"></script>
+    <script type ="text/javascript" src="assets/libs/js/bootstrap.js"></script>
+    <script src="assets/libs/js/jquery.ui.widget.js"></script>
+    <script src="assets/libs/js/jquery.iframe-transport.js"></script>
+    <script src="assets/libs/js/jquery.fileupload.js"></script>
+</head>
+<body>
+
+<div class="alert alert-danger alert-dismissable lead" id="notice">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+        <div class="row">
+            <p class="col-md-11 col-md-offset-1"><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+        </div>
+    </div>
+</div>
+
+    <header>
+        <nav class="principal container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <img src="assets/images/lg-partners-logo.png" alt="" class="logo">
+                    <p>Ambiente <strong>Administrativo</strong></p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <nav class="principal container">
+        <div class="menu">
+            <div class="row">
+                <ul class="col-md-12">
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-arquivos.png" alt="">Arquivos</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-usuarios.png" alt="">Usuários</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-categorias-e-produtos.png" alt="">Categorias<br>e produtos</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-campanhas.png" alt="">Campanhas</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-retailers.png" alt="">Retailers</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-relatorios.png" alt="">Relatórios</a></li>
+                    <li><a href="#" title=""><img src="assets/images/icon-menu-meus-dados.png" alt="">Meus dados</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info">
+    <div class="container">
+        <div class="sections-info-user row">
+            <div class="col-md-5">Olá Simei Doblinski, bem vindo ao LG Partners!</div>
+            <div class="col-md-3">
+            	<span class="ultimo-acesso">Último acesso</span>
+            	<p>01/04/14 as 11:22</p>
+            </div>
+            <div class="col-md-3"><p class="uploads-efetuados">Uploads efetuados <span>178</span></p></div>
+            <div class="col-md-1"><button type="button" class="btn btn-default btn-sm">Sair</button></div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="container">
+    <div class="splash">
+        <h1>Incluir arquivos</h1>
+        <p>Para selecionar múltiplos arquivos, basta selecionar todos em sua origem, adiciona-los e classifica-los por grupo ou individualmente.</p>
+    </div>
+</div>
+
+<script src="assets/js/incluir-arquivos.js"></script>
+
+<section class="container" id="incluir-arquivos">
+    <div class="etapa">
+        <div class="row">
+            <header class="col-md-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>1</strong>
+                </div>
+                <p>Selecione o arquivo na pasta de origem:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                
+                <form action="" enctype="multipart/form-data">
+                    <input type="file" id="upload-de-arquivos" multiple="" style="display: none">
+                    <input type="submit" class="btn-procurar btn-lg btn-default col-md-10" value="Procurar">
+                </form>
+                
+            </div>
+            <div class="col-md-9 col-md-offset-1">
+                <table class="table table-bordered uploading-files">
+                    
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tamanho</th>
+                            <th>Status</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                     </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="etapa">
+
+        <div class="row">
+            <header class="col-md-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>2</strong>
+                </div>
+                <p>Selecione a Unidade de Negócio:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+
+        <div class="row">
+            <ul class="lista-icones" id="business-units">
+                <li class="last all-business-units">
+                        <h2>TODOS</h2>
+                        <div class="content">
+                            <img src="#" alt="" />
+                        </div>
+                        <div class="footer">
+                            <!-- <p>Subs Sel.: <span>2</span></p> -->
+                        </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="subcategorias-panel">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Abaixo as <strong>sub-categorias e produtos</strong> relacionadas a Unidade de Negócio selecionada acima:</p>
+                    <p class="opcional">Campo opcional</p>
+                </div>
+            </div>
+            <div class="subcategorias row">
+                <ul class="col-md-3"></ul>
+                <ul class="col-md-3"></ul>
+                <ul class="col-md-3"></ul>
+                <ul class="col-md-3"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="etapa">
+        <div class="row">
+            <header class="col-md-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>3</strong>
+                </div>
+                <p>Selecione a campanha:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+
+        <div class="row">
+            <ul class="lista-icones icones-grandes">
+            
+                <li>
+                    <img src="#" alt="" />
+                    <h2>Oled</h2>
+                </li>
+                <li>
+                    <img src="#" alt="" />
+                    <h2>Ultra HD</h2>
+                </li>
+                <li>
+                    <img src="#" alt="" />
+                    <h2>Smart TV</h2>
+                </li>
+                <li>
+                    <img src="#" alt="" />
+                    <h2>My TV</h2>
+                </li>
+                <li class="last">
+                    <img src="#" alt="" />
+                    <h2>TVs 3D</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="etapa" id="etapa-atribuir-destinatarios">
+        <div class="row">
+            <header class="col-md-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>4</strong>
+                </div>
+                <p>Atribuir destinatários específicos:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+
+<!--         <div class="row">
+            <div class="col-md-2">
+                <a href="#">Clique para abrir</a>
+            </div>
+        </div>
+ -->
+        <div class="row">
+            <div class="info col-md-12">
+                <p>Clique aqui e verifique se o(s) arquivo(s) anexado(s) possue(m) as configurações corretas.</p>
+                <br />
+                <input type="submit" class="btn-lg btn-default col-md-2" value="Visualizar" data-toggle="modal" data-target="#myModal">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Incluir arquivos</h4>
+        <p>Verifique aqui se o(s) arquivo(s) anexados(s) no passo anterior esta(ão) com as suas categorias corretamente demarcadas, junto com seus destinatários, antes de finalizar o processo e enviá-los ao fornecedores.</p>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>Nome</th>
+                    <th>Categoria e produto</th>
+                    <th>Campanha</th>
+                    <th>Usuários/retailers</th>
+                    <th>Tamanho</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><a href="#"><img src="#" alt="" /></a></td>
+                    <td>Pasta:AC</td>
+                    <td>.Ar Condicionados<br/>Inverter</td>
+                    <td>Ar Terapia</td>
+                    <td>.FNAC<br />.Murilo C.</td>
+                    <td>2GB</td>
+                    <td><a href="#"><img src="#" alt="" /></a></td>
+                </tr>
+            </tbody>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p class="small text-center">Caso o arquivo e seus dados estejam corretos, basta clicar no botão enviar que os destinatários serão informados da disponibilidade dos mesmos.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">LOGO</div>
+                <div class="col-md-8">Copyright (c) 2014 LG Electronics. Todos os direitos reservados.</div>
+                <div class="col-md-1">Entrue Consulting</div>
+                <div class="col-md-1">LG CNS</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

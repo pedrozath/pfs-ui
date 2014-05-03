@@ -1,0 +1,338 @@
+.splash 
+    background-color: #fc9eb6
+    border-radius: 10px
+    padding: 10px
+    text-align: center
+    color: #ffffff
+
+    h1 
+        text-transform: uppercase
+        font-weight: 100
+        font-size: 30px
+
+    p 
+        font-size: 16px
+        font-weight: 100
+
+// 
+//     margin: 20px 0
+//     padding: 20px 35px
+//     background-color: #f2f2f2
+//     border-radius: 10px
+
+.etapa 
+    margin: 20px 0
+    padding: 20px 20px
+    background-color: #f2f2f2
+    border-radius: 10px
+
+    > * + * form
+        margin-top: 50px
+
+        p
+            font-size: 11px
+            color: $cinza-50
+            font-family: Arial
+            padding-top: 60px
+
+            span
+                text-transform: uppercase
+                font-weight: 900
+
+    .border
+        width: 96%
+        height: 1px
+        background-color: #cccccc
+        position: absolute
+        top: 30px
+        left: 29px
+
+    header 
+        height: 30px
+        margin-top: 10px
+        margin-bottom: 20px
+
+        .numero-etapa 
+            width: 55px
+            height: 55px
+            line-height: 1
+            margin: -15px -5px 0 -5px
+            background-color: $branco
+            text-align: center
+            padding: 9px
+            float: left
+            border-radius: 30px
+            z-index: 5
+            position: relative
+            text-transform: uppercase
+            color: #9a9a9a
+            font-size: 12px
+            border: solid 1px #d95880
+
+            strong
+                margin-top: -10px
+                font-size: 30px
+                color: #d95880
+
+            p 
+                margin: 0
+        > p 
+            height: 100%
+            padding: 7px 20px
+            margin-left: -10px
+            background-color: #fdd8e1
+            display: inline-block
+            font-family: $corpo
+            font-weight: 700
+            font-size: 16px
+            color: #d95880
+            line-height: 20px
+
+    p.obrigatorio 
+        border: 0
+        border-radius: 0
+        margin-left: 0
+        background-color: transparent
+        text-transform: uppercase
+        color: #8f8f8f
+        font-family: $corpo
+        font-weight: 500
+        font-size: 12px
+        background: url("../images/icon-etapa-obrigatoria.png") 19px 11px no-repeat
+        padding: 7px 38px
+        font-style: italic
+        letter-spacing: 1px
+
+    p.opcional 
+        border: 0
+        border-radius: 0
+        margin-left: 0
+        background-color: transparent
+        text-transform: uppercase
+        color: #8f8f8f
+        font-family: $corpo
+        font-weight: 500
+        font-size: 12px
+        background: url("../images/icon-etapa-opcional.png") 19px 8px no-repeat
+        padding: 7px 38px
+        font-style: italic
+        letter-spacing: 1px
+
+    .content 
+        padding: 20px 40px
+        background-color: #dcdcdc
+        border-radius: 10px
+
+        input 
+            margin: 96px 0 10px 0
+        p 
+            float: left
+
+    .incluir-arquivos-abrir, p.incluir-arquivos-abrir
+        padding: 10px 20px 5px 20px
+        border-radius: 10px
+        background-color: $cinza-10
+
+        > a
+            text-transform: uppercase
+            font-family: $corpo
+            color: $cinza-50
+            font-weight: 700
+
+            > span
+                font-size: 10px
+                margin-left: 3px
+
+            > span.seta-fechar
+                -webkit-transform: rotate(90deg)
+
+        > h4
+            font-family: Arial
+            font-size: 14px
+            text-transform: uppercase
+            color: #df7193
+            border-top: solid 1px #b3b3b3
+            margin-top: 3px
+            padding-top: 20px
+
+    .incluir-arquivos-abrir
+
+        .btn-destinatarios
+            background-color: #f1f1f1
+            color: $cinza-50
+            letter-spacing: 2px
+            padding: 10px 0
+            border: none
+            border-radius: 10px
+            margin-bottom: 10px
+
+            &:hover
+                background-color: $cinza-50
+                color: $branco
+    
+            > h3, > p
+                font-family: $corpo
+                font-weight: 700
+                
+
+            > h3
+                margin: 5px 0 0 0
+                text-transform: uppercase
+
+            > p
+                margin: 0
+
+table
+    background-color: #ffffff
+
+    th 
+        text-transform: uppercase
+
+    .delete
+        font-size: 40px
+        line-height: 1.0
+
+.row .lista-icones
+    margin-left: 15px
+    margin-right: 15px
+
+ul.lista-icones 
+    $gutter-icones: 15px
+    box-shadow: 0px 0px 1px #d80546
+    display: table
+    padding: 0
+    padding-bottom: $gutter-icones
+    padding-right: $gutter-icones
+    border-radius: 10px
+    margin-top: -19px
+    background-color: $branco
+    width: 1100px
+
+    li
+        width: 140px
+        height: 166px
+        border-radius: 10px
+        background-color: #f2f2f2
+        float: left
+        margin-left: $gutter-icones
+        margin-top: $gutter-icones
+        
+
+        h2 
+            margin: 0
+            text-align: center
+            font-size: 25px
+            line-height: 25px
+            padding: 10px 0 5px 0
+            color: $cinza-50
+
+        &.selected
+            a 
+                > .footer, > h2
+                    background-color: #d80546
+                    color: #fff
+
+            span
+                color: #000
+            
+        a 
+
+            > img
+                padding: 47px 60px
+                border-top-left-radius: 12px
+                border-top-right-radius: 12px
+
+            > h2
+                text-transform: uppercase
+                background-color: $cinza-10
+                border-top-left-radius: 12px
+                border-top-right-radius: 12px
+
+            > .content 
+                height: 97px
+                border-radius: 0
+                background-color: #f4f4f4
+
+            > .footer 
+                padding: 0 10px
+                background-color: $cinza-10
+                border-bottom-left-radius: 10px
+                border-bottom-right-radius: 10px
+                color: #666565
+                font-size: 12px
+                font-family: Arial
+
+                p 
+                    width: 100%
+                    padding: 7px 0 5px 0
+                    text-transform: uppercase
+
+                    span 
+                        padding: 2px 9px 0 9px
+                        background-color: #ffffff
+                        border: solid 1px $cinza-50
+                        border-radius: 6px
+                        margin-left: 4px
+
+    &.icones-grandes
+        $gutter-icones-grandes: 15px
+        padding-bottom: $gutter-icones-grandes
+        padding-right: $gutter-icones-grandes
+
+        li 
+            width: 202px
+            height: 220px
+            margin-left: $gutter-icones-grandes
+            margin-top: $gutter-icones-grandes
+
+
+            h2
+                color: #d80546
+                border-radius: 0
+                border-bottom-left-radius: 12px
+                border-bottom-right-radius: 12px
+
+.subcategorias-panel
+    margin: 0
+    margin-left: 20px
+    margin-right: 20px
+    padding: 20px
+    background-color: #d3d3d3
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
+    overflow: hidden
+    background-color: #dadada
+
+    p 
+        display: inline-block
+
+#etapa-atribuir-destinatarios .info
+    text-align: center
+
+.bg-danger
+    background-color: #f1f1f1
+    border-top-right-radius: 4px
+    border-top-left-radius: 4px
+
+.btn-procurar
+    background-color: #d80546
+    color: $branco
+    text-transform: uppercase
+    font-family: $corpo
+    font-weight: 300
+
+    letter-spacing: 2px
+    padding-top: 14px
+    border: none
+
+    &:hover
+        background-color: $cinza-50
+        color: $branco
+
+.gerenciar-cat-prod
+
+    p 
+        font-size: 16px
+        color: $cinza-50
+        font-weight: 100
+        padding: 0 30px

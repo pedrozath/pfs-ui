@@ -1,0 +1,181 @@
+---
+layout: user
+---
+
+<section class="container">
+
+    <!--
+    <div class="row">
+        <div class="col-md-2">
+            <h1>Campanhas</h1>
+            <p>Selecione ao lado a Campanha relativaao arquivo desejado.</p>
+        </div>
+        <div class="col-md-10">
+            <ul class="lista-campanhas-user">
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="">
+                        <img src="{{assets}}/images/campanha-1.png" alt="">
+                        <h4>OLED</h4>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="adicionar-campanha"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+    </div>
+    -->
+
+    <div class="row">
+        <form class="busca-admin">
+            <div class="col-md-7">
+                <input class="form-control input-lg input-busca" type="text">
+            </div>
+            <div class="col-md-4">
+                <h4>caso deseje, filtre sua busca por:</h4>
+                <div class="row">
+                    <div class="select-busca-admin col-md-6">
+                        <span>campanha</span>
+                        <select class="form-control">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                    <div class="select-busca-admin col-md-6">
+                        <span>categoria de produto</span>
+                        <select class="form-control">
+                            <option>Selecione:</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-default btn-block glyphicon glyphicon-search btn-busca btn-lg"></button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="select-table">
+                <li><a href="#" title=""><img src="{{assets}}/images/icon-select.png" alt="">Selecionar todos os arquivos</a></li>
+                <li><img src="{{assets}}/images/spacer-admin-home.png" alt=""></li>
+                <li><a href="#" title="">Baixar arquivos selecionados<img src="{{assets}}/images/icon-download.png" alt=""></a></li>
+            </ul>
+            <table class="table table-bordered uploading-files">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">Nome</th>
+                        <th class="col-md-2">Categoria de produto</th>
+                        <th class="col-md-2">Campanha</th>
+                        <th class="col-md-1 text-center">Tamanho</th>
+                        <th class="col-md-1 text-center">Data</th>
+                        <th class="col-md-1 text-center">Editar</th>
+                        <th class="col-md-1 text-center">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td>Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td>Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td>Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td>Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> Promo_video_2013.mp4</td>
+                        <td>.Ar condicionados .Inverter</td>
+                        <td>Ar Terapia</td>
+                        <td class="text-center">2Gb</td>
+                        <td class="text-center">07/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-lista-campanha"> DocDescricaoCel.pdf</td>
+                        <td>.Celulares .Smartphones</td>
+                        <td>Slide</td>
+                        <td class="text-center">16Mb</td>
+                        <td class="text-center">04/04/2014</td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-editar.png" alt=""></a></td>
+                        <td class="text-center"><a href="#" title=""><img src="{{assets}}/images/icon-excluir.png" alt=""></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 text-center">
+            <span class="info-paginacao">Página</span>
+            <ul class="pagination">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+            <span class="info-paginacao">Resultados por página</span>
+            <ul class="pagination">
+              <li><a href="#">10</a></li>
+              <li><a href="#">25</a></li>
+              <li><a href="#">50</a></li>
+            </ul>
+        </div>
+
+
+</section>

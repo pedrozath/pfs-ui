@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LG Partner</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/jquery.ui.all.css">
+    
+    <script type ="text/javascript" src="assets/libs/js/jquery.js"></script>
+    <script type ="text/javascript" src="assets/libs/js/bootstrap.js"></script>
+    <script src="assets/libs/js/jquery.ui.widget.js"></script>
+    <script src="assets/libs/js/jquery.iframe-transport.js"></script>
+    <script src="assets/libs/js/jquery.fileupload.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="assets/libs/js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+<body>
+
+<div class="alert alert-danger alert-dismissable lead" id="notice">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+        <div class="row">
+            <p class="col-md-11 col-md-offset-1"><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+        </div>
+    </div>
+</div>
+
+    <header>
+        <nav class="principal container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/images/lg-partners-logo.png" alt="" class="logo-user">
+                    <ul class="menu-user">
+                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="#" title="">Meus downloads</a></li>
+                        <li><p>Em caso de dúvidas ou sugestões, entre em contato com o responsável por sua conta no Depto. de Marketing.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <nav class="principal container">
+
+    </nav>
+
+    <div class="info">
+    <div class="container">
+        <div class="sections-info-user row">
+            <div class="col-xs-5">Olá Simei Doblinski, bem vindo ao LG Partners!</div>
+            <div class="col-xs-3">
+            	<span class="ultimo-acesso">Último acesso</span>
+            	<p>01/04/14 as 11:22</p>
+            </div>
+            <div class="col-xs-3"><p class="uploads-efetuados">Uploads efetuados <span>178</span></p></div>
+            <div class="col-xs-1"><button type="button" class="btn btn-default btn-sm">Sair</button></div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class="container">
+    <div class="splash">
+        <h1>gerenciar categorias e produtos</h1>
+        <p>Selecione abaixo para qual <strong>Unidade de Negócio</strong> deseja incluir <strong><em>categorias</em></strong> ou produtos para futura classificação dos arquivos enviados.</p>
+    </div>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/spawn-business-units-and-subcategories.js"></script>
+<script src="assets/js/gerenciar-categorias-e-produtos.js"></script>
+<script src="assets/js/data-output.js"></script>
+<script src="assets/js/incluir-arquivos/utils.js"></script>
+<script src="assets/js/incluir-arquivos/selectable.js"></script>
+<script src="assets/js/incluir-arquivos/subcategorias.js"></script>
+<script src="assets/js/incluir-arquivos/business-unit.js"></script>
+
+<script src="assets/js/incluir-arquivos/data-output.js"></script>
+
+<section class="container">
+
+    <div class="etapa">
+
+        <br>
+        <div class="row">
+            <ul class="lista-icones" id="business-units">
+    <li class="all-business-units">
+        <a href="#">
+            <h2>&nbsp;</h2>
+            <div class="content">
+                <h2>TODOS</h2>
+            </div>
+            <div class="footer">
+                <!-- <p>Subs Sel.: <span>2</span></p> -->
+            </div>
+        </a>
+    </li>
+</ul>
+        </div>
+
+        <div class="subcategorias-panel gerenciar-cat-prod">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Abaixo as <strong>sub-categorias e produtos</strong> relacionadas a Unidade de Negócio selecionada acima:</p>
+                    <p>O <strong>Produto</strong> deve vir associado a sua <strong>Categoria</strong> dentro da Unidade de Negócio, para tal clique em ( <img src="assets/images/btn-adicionar.png" alt=""> ), na aba específica para adicionar o nome do Produto.<br>Caso ainda não haja a categoria referente, use a área marcada para inclusão de uma nova.</p>
+                    <p>Clique em (<img src="assets/images/btn-remover.png" alt="">) para <strong>Excluir</strong> o item.</p>
+                </div>
+            </div>
+            <div class="subcategorias">
+    <div class="row">
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+        <ul class="colunas-subcategorias col-xs-3"></ul>
+    </div>
+</div>
+
+<!--             <div class="subcategorias">
+                <div class="row">
+                    <ul class="gerenciar-subcategorias col-xs-3">
+                        <li>
+                            <span>Exemplo</span>
+                            <a href="#" title="Remover item"><img src="assets/images/btn-remover.png" alt=""></a>
+                            <a href="#" title="Adicionar item"><img src="assets/images/btn-adicionar.png" alt=""></a>
+                        </li>
+                        <li class="subcategoria">
+                            <span>Exemplo subcategoria</span>
+                            <a href="#" title="Remover item"><img src="assets/images/btn-remover.png" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul class="gerenciar-subcategorias col-xs-3">
+                        <li class="nova-categoria"><a href="#">+ Nova Categoria</a></li>
+                    </ul>
+                </div>
+            </div>
+
+ -->        </div>
+
+    </div>
+
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 logo"><img src="assets/images/lg-logo-small.png" alt=""></div>
+                <div class="col-md-10">
+                    <div class="links">
+                        <ul class="menu-footer">
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Arquivos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Baixar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Usuários</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Grupos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Categorias e produtos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Campanhas</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Retailers</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Relatórios</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Acessos</a></li>
+                                        <li><a href="#">Downloads</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#">Meus dados</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Copyright (c) 2014 LG Electronics. Todos os direitos reservados.</p>
+                    </div>
+
+                </div>
+                <div class="col-md-1 logo-cns-footer"><img src="assets/images/desenvolvido-por-lg-cns.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

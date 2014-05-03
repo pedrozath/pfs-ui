@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+
+<div class="alert alert-danger alert-dismissable lead" id="notice">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div class="container">
+        <div class="row">
+            <p class="col-md-11 col-md-offset-1"><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+        </div>
+    </div>
+</div>
+
+    <header>
+        <nav class="principal container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{assets}}/images/lg-partners-logo.png" alt="" class="logo-user">
+                    <ul class="menu-user">
+                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="#" title="">Meus downloads</a></li>
+                        <li><p>Em caso de dúvidas ou sugestões, entre em contato com o responsável por sua conta no Depto. de Marketing.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <nav class="principal container">
+
+    </nav>
+
+    {{> user-info}}
+
+    {{> body}}
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 logo"><img src="{{assets}}/images/lg-logo-small.png" alt=""></div>
+                <div class="col-md-10">
+                    <div class="links">
+                        <ul class="menu-footer">
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Arquivos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Baixar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Usuários</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                        <li><a href="#">Grupos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Categorias e produtos</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Campanhas</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Retailers</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Incluir</a></li>
+                                        <li><a href="#">Editar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#" class="dropdown-toggle submenu" data-toggle="dropdown">Relatórios</a>
+                                    <ul class="dropdown-menu submenu-footer" role="menu">
+                                        <li><a href="#">Acessos</a></li>
+                                        <li><a href="#">Downloads</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropup">
+                                    <a href="#">Meus dados</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Copyright (c) 2014 LG Electronics. Todos os direitos reservados.</p>
+                    </div>
+
+                </div>
+                <div class="col-md-1 logo-cns-footer"><img src="{{assets}}/images/desenvolvido-por-lg-cns.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

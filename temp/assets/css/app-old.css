@@ -1,0 +1,162 @@
+/*
+
+# cores 
+branco: #000
+cinza-10: #dadada
+cinza-50: #767779 
+cinza-90: #b1b1b1
+preto: #000
+
+# fontes 
+corpo: LGSmart
+
+*/
+
+body {
+    font-family: "LG Smart";
+    line-height: 1.4;
+}
+
+body > header .info {
+    background-color: #b1b1b1;
+}
+
+body > * {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+body > * > * {
+    margin-bottom: 20px;
+}
+
+body > * > * + * {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #dadada;
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav.principal a {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+a {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.campanhas {
+    background-color: #dadada;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.campanhas ul {
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+    width: 720px;
+    float: left;
+}
+
+.campanhas ul li {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: 1px solid red;
+}
+
+.campanhas ul li + li {
+    margin-left: 20px
+}
+
+.plus {
+    display: inline-block;
+    font-size: 80px;
+    line-height: 120px;
+}
+
+.campanhas .plus {
+    float: right;
+    margin-right: 30px;
+}
+
+.inverted {
+    color: #fff;
+}
+
+input {
+/*    border-radius: 5px;
+    border: 1px solid #fdacbb;
+*/
+}
+
+form.busca > * {
+    height: 40px;
+}
+
+.login {
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    text-align: center;
+}
+
+.incluirArquivos {}
+
+.incluirArquivos .splash {background-color:#fc9eb6; border-radius:10px; padding:10px; text-align:center; color:#ffffff}
+.incluirArquivos .splash h1 {text-transform:uppercase; font-weight:100}
+
+.incluirArquivos .main {margin:20px 0; padding:20px 35px; background-color:#f2f2f2; border-radius:10px}
+
+.incluirArquivos .main .etapas {border-radius:10px; padding-top:10px; padding-bottom:10px}
+
+.incluirArquivos .main .etapas .header {height:30px; padding:0}
+.incluirArquivos .main .etapas .header .numeroEtapa {width:50px; height:50px; margin:-10px 10px 0 0; background-color:#cdcdcd; text-align:center; padding-top:8px; float:left; border-radius:10px}
+.incluirArquivos .main .etapas .header .numeroEtapa p {margin:0}
+.incluirArquivos .main .etapas .header > p {height:100%; padding:7px 20px; margin-left:-10px; background-color:#c0c0c0; display:inline-block}
+.incluirArquivos .main .etapas .header > p.obrigatorio {border:0; border-radius:0; margin-left:0; background-color:transparent}
+
+.incluirArquivos .main .etapas .content {padding:20px; background-color:#dcdcdc; border-radius:10px}
+.incluirArquivos .main .etapas .content input {margin:96px 0 10px 0}
+.incluirArquivos .main .etapas .content p {float:left}
+
+.incluirArquivos .main .etapas .content table {background-color:#ffffff}
+.incluirArquivos .main .etapas .content table th {text-transform:uppercase}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+.login-wrapper
+    height: 400px
+    width: 400px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -200px
+    margin-left: -200px
+    text-align: center
+    z-index: 1
+    color: $cinza-50
+
+    .login-panel
+        text-align: left
+
+    button
+        float: right
+
+    .login-panel
+        padding: 20px
+        margin: 25px
+        border-radius: 10px
+        box-shadow: 0 0 20px #cdcdcd
+        overflow: hidden
+
+        > p > a
+            color: #f63b70
+
+        > form 
+            margin-bottom: 50px
+
+            > * > *
+                border-radius: 6px
+
+            > a
+                float: left
+                margin: -10px 0 0 10px
+                font-size: 12px
+                color: $cinza-50
+                text-decoration: underline
+
+                &:hover
+                    color: $preto
+
+            > button
+                float: right
+                background-color: #f93d70
+                margin-top: -5px
+                color: $branco
+                font-size: 15px
+                border: none
+                border-radius: 15px
+                padding: 3px 20px
+
+                &:hover
+                    background-color: #cc315a
+                    color: $branco

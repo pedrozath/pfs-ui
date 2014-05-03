@@ -1,0 +1,361 @@
+---
+layout: admin
+---
+
+<div class="container">
+    <div class="splash">
+        <h1>Incluir arquivos</h1>
+        <p>Para selecionar múltiplos arquivos, basta selecionar todos em sua origem, adiciona-los e classifica-los por grupo ou individualmente.</p>
+    </div>
+</div>
+
+<script src="{{assets}}/js/incluir-arquivos/utils.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/incluir-arquivos.js"></script>
+<script src="{{assets}}/js/spawn-business-units-and-subcategories.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/html-resumo.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/data-output.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/selectable.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/subcategorias.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/business-unit.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/campanha.js"></script>
+<script src="{{assets}}/js/incluir-arquivos/destinatarios.js"></script>
+
+<script src="{{assets}}/js/data.js"></script>
+
+<section class="container" id="incluir-arquivos">
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="border"></div>
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>1</strong>
+                </div>
+                <p>Selecione o arquivo na pasta de origem:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                
+                <form action="" enctype="multipart/form-data">
+                    <input type="file" id="upload-de-arquivos" multiple="" style="display: none">
+                    <input type="submit" class="btn-procurar btn-lg btn-default col-xs-12" value="Procurar" id="upload-de-arquivos-btn">
+                    <p>Caso deseje alterar o Nome do Arquivo, clique em <span>Editar</span>.</p>
+                </form>
+                
+            </div>
+            <div class="col-xs-10">
+                <table class="table table-bordered uploading-files">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tamanho</th>
+                            <th>Status</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                     </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>2</strong>
+                </div>
+                <p>Selecione a Unidade de Negócio:</p>
+                <p class="obrigatorio">Etapa obrigatória</p>
+            </header>
+        </div>
+
+        <div class="row">
+            {{>business-units}}
+        </div>
+
+        <div class="subcategorias-panel">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Abaixo as <strong>sub-categorias e produtos</strong> relacionadas a Unidade de Negócio selecionada acima:</p>
+                    <p class="opcional">Campo opcional</p>
+                </div>
+            </div>
+            {{>categorias}}
+        </div>
+    </div>
+    </div>
+
+    <div class="etapa">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>3</strong>
+                </div>
+                <p>Selecione a campanha:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+
+        <div class="row">
+            <ul id="campanhas" class="lista-icones icones-grandes"></ul>
+        </div>
+    </div>
+
+    <div class="etapa" id="etapa-atribuir-destinatarios">
+        <div class="row">
+            <header class="col-xs-12">
+                <div class="border"></div>
+                <div class="numero-etapa">
+                    <p>Etapa</p>
+                    <strong>4</strong>
+                </div>
+                <p>Atribuir destinatários específicos:</p>
+                <p class="opcional">Campo opcional</p>
+            </header>
+        </div>
+        <div id="e4content-click" class="row">
+            <div class="col-xs-12">
+                <p class="incluir-arquivos-abrir">
+                    <a href="#" class="btn-click action-open action-targetid-e4content">Clique para abrir <span class="glyphicon glyphicon-play"></span></a>
+                </p>
+            </div>
+        </div>
+        <div id="e4content" class="row" style="display:none;">
+            <div class="col-xs-12">
+                <div class="incluir-arquivos-abrir">
+                    <a href="#" class="btn-click action-close action-targetid-e4content">Clique para fechar <span class="glyphicon glyphicon-play seta-fechar"></span></a>
+                    <h4>usuários, grupos e retailer</h4>
+                    <p>Caso o(s) arquivo(s) possua(m) um destinatário especifico, determine aqui o Usuário, Grupo ou Retailer que irá recebe-lo:</p>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalUsuarios"><h3>usuário</h3><p>ver lista completa</p></button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalGrupos"><h3>grupo</h3><p>ver lista completa</p></button>
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="button" class="btn btn-destinatarios btn-block" data-toggle="modal" data-target="#modalRetailers"><h3>retailer</h3><p>ver lista completa</p></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="info col-xs-12">
+            <p class="text-center">Clique aqui e verifique se o(s) arquivo(s) anexado(s) possue(m) as configurações corretas.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="info col-xs-2 col-xs-offset-5">
+            <input type="submit" id="visualizar" class="btn-lg btn-default btn-block btn-procurar" value="Visualizar" data-toggle="modal" data-target="#modalVisualizar">
+        </div>
+    </div>
+</section>
+
+<!-- MODAL VISUALIZAR -->
+<div class="modal fade bs-example-modal-lg" id="modalVisualizar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Incluir arquivos</h3>
+                <h4>Verifique aqui se o(s) arquivo(s) anexados(s) no passo anterior esta(ão) com as suas categorias corretamente demarcadas, junto com seus destinatários, antes de finalizar o processo e enviá-los ao fornecedores.</h4>
+            </div>
+        <div class="modal-body" id="resumo">
+<!--         <table class="table table-bordered">
+                    
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tamanho</th>
+                    <th>Status</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+ -->
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Caso o arquivo e seus dados estejam corretos, basta clicar no botão enviar que os destinatários serão informados da disponibilidade dos mesmos.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL VISUALIZAR -->
+
+<!-- MODAL RETAILERS -->
+<div data-destinatarios="retailers" class="modal fade bs-example-modal-lg" id="modalRetailers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="myModalLabel">Retailers</h3>
+                <h4>Modal incluir arquivos para retailers.</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width="90%" class="bg-danger">Nome</th>
+                            <th class="text-center bg-danger">Selecionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<th>Pedro Alvares Cabral</th>
+							<th class="text-center"><input type="checkbox" value="1"></th>
+						</tr>
+						<tr>
+							<th>Barack Obama</th>
+							<th class="text-center"><input type="checkbox" value="2"></th>
+						</tr>
+						<tr>
+							<th>Valeska Popozuda</th>
+							<th class="text-center"><input type="checkbox" value="3"></th>
+						</tr>
+						<tr>
+							<th>Neymar da Silva Junior</th>
+							<th class="text-center"><input type="checkbox" value="4"></th>
+						</tr>
+						<tr>
+							<th>Paulo Maluf</th>
+							<th class="text-center"><input type="checkbox" value="5"></th>
+						</tr>
+					</tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [end] MODAL RETAILERS -->
+
+<!-- MODAL USUARIOS -->
+<div data-destinatarios="usuarios" class="modal fade bs-example-modal-lg" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="myModalLabel">Usuários</h3>
+        <h4>Modal incluir arquivos para usuários.</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+            
+            <thead>
+                <tr>
+                    <th width="90%" class="bg-danger">Nome</th>
+                    <th class="text-center bg-danger">Selecionar</th>
+                </tr>
+                 <tr>
+                    <th>Pedro Alvares Cabral</th>
+                    <th class="text-center"><input type="checkbox" value="1"></th>
+                </tr>
+                <tr>
+                    <th>Barack Obama</th>
+                    <th class="text-center"><input type="checkbox" value="2"></th>
+                </tr>
+                <tr>
+                    <th>Valeska Popozuda</th>
+                    <th class="text-center"><input type="checkbox" value="3"></th>
+                </tr>
+                <tr>
+                    <th>Neymar da Silva Junior</th>
+                    <th class="text-center"><input type="checkbox" value="4"></th>
+                </tr>
+                <tr>
+                    <th>Paulo Maluf</th>
+                    <th class="text-center"><input type="checkbox" value="5"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL USUARIOS -->
+
+<!-- MODAL GRUPOS -->
+<div data-destinatarios="grupos" class="modal fade bs-example-modal-lg" id="modalGrupos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="myModalLabel">Grupos</h3>
+        <h4>Modal incluir arquivos para grupos.</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+            
+            <thead>
+                <tr>
+                    <th width="90%" class="bg-danger">Nome</th>
+                    <th class="text-center bg-danger">Selecionar</th>
+                </tr>
+                <tr>
+                    <th>Pedro Alvares Cabral</th>
+                    <th class="text-center"><input type="checkbox" value="1"></th>
+                </tr>
+                <tr>
+                    <th>Barack Obama</th>
+                    <th class="text-center"><input type="checkbox" value="2"></th>
+                </tr>
+                <tr>
+                    <th>Valeska Popozuda</th>
+                    <th class="text-center"><input type="checkbox" value="3"></th>
+                </tr>
+                <tr>
+                    <th>Neymar da Silva Junior</th>
+                    <th class="text-center"><input type="checkbox" value="4"></th>
+                </tr>
+                <tr>
+                    <th>Paulo Maluf</th>
+                    <th class="text-center"><input type="checkbox" value="5"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+             </tbody>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Texto de confirmação antes de clicar em salvar.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [end] MODAL GRUPOS -->
