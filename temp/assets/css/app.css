@@ -2269,6 +2269,8 @@ body .menu ul li > a > img { display: block; margin: 0 auto 10px auto; }
 body .menu ul li:first-child a { background: none; }
 body .menu ul li:first-child a:hover { background: #dadada; }
 
+h4 { color: #d80546; }
+
 footer { background-color: #f2f2f2; margin-bottom: 0px; padding-top: 20px; padding-bottom: 40px; }
 footer .links { height: 86px; background: url("../images/spacer-footer.jpg") 10px 0 no-repeat; padding-left: 41px; }
 footer .logo { padding-top: 23px; }

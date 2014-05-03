@@ -74,7 +74,7 @@ Subcategorias.prototype = {
 
             _this.html_content.push([
                 "<li id="+subcategoria_id+" "+data_id+" href=\"#\" "+data_attr+">",
-                "   <div "+content_editable+">"+this.business_unit_icon+"<span class=\"name\">"+item.name+"</span>"+add_btn+remove_btn+"</div>",
+                "   <div "+content_editable+">"+_this.business_unit_icon+"<span class=\"name\">"+item.name+"</span>"+add_btn+remove_btn+"</div>",
                 (function(){
                     var output = [];
                     if(item.products.length > 0){
@@ -84,7 +84,7 @@ Subcategorias.prototype = {
                             App.subcategory_item_counter++;
                             var id = "id=\"subcategoria-"+product.id+"\"";
                             var parent_id = "data-parent-id=\""+subcategoria_id+"\"";
-                            output.push("   <li "+id+" "+[data_attr, parent_id, data_id].join(" ")+"><div>"+this.business_unit_icon+"<span class=\"name\">"+product.name+"</span>"+remove_btn+"</div></li>");
+                            output.push("   <li "+id+" "+[data_attr, parent_id, data_id].join(" ")+"><div>"+_this.business_unit_icon+"<span class=\"name\">"+product.name+"</span>"+remove_btn+"</div></li>");
                         });
                         output.push("</ul>");
                     }
@@ -185,6 +185,7 @@ Subcategorias.prototype = {
     },
 
     new: function(){
+        console.log(this.business_unit_icon);
         var item = $("<li><div>"+this.business_unit_icon+"<span class=\"name\">Nova categoria</span>"+this.add_btn+this.remove_btn+"</div></li>").appendTo(this.options.parent_element.children().last());
         this.add_remove_on_click(item.find("> div > .remover-btn"), item);
         this.add_new_inside_on_click(item.find("> div > .adicionar-btn"), item);
